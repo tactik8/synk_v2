@@ -2,6 +2,12 @@
 
 Python functions to try to identify the schema and fields of an unknown record.
 
+## Use case
+Here is an example of use case:
+A user downloads an excel spreadsheet containing an employee list. In order to be uploaded to a CRm, the list need to be normalized. 
+The functions would analyze each fields of each record, and guess the type (first name, email, address, etc). 
+It would provide as an output a mapping between the original record and a standardized record (following schema.org model). 
+
 ## Requirements
 - For each fields of a record:
   - Determine the data type (str, int, float, dict, list, etc)
