@@ -1,16 +1,22 @@
-# extract_from_html
+# analyze_records
 
-Python functions to extract unstructured information from html.
+Python functions to try to identify the schema and fields of an unknown record.
 
 ## Requirements
-- Develop extractors to retrieve each of the following information from a html string:
-  - text
-  - links
-  - rss feeds
-  - domain
-  - google analytics id
-  - sctuctured data / microdata
-  - 
+- For each fields of a record:
+  - Determine the data type (str, int, float, dict, list, etc)
+  - Determine the field schema:
+    - Email
+    - URL 
+    - Phone
+    - address
+    - monetary
+    - first name
+    - last name
+    - date
+- Compile most frequent schemas for each fields across a series of record
+- Guess best schema - type
+- Guess overall record schema base don available fields.
 
 
 - Output result in a list of json-ld schema.org records
@@ -45,18 +51,6 @@ For example, the string "Steve can be reached at steve@apple.com" would give:
     "kraken:extracteddate": 2020-10-28T20:43:55+00:00
     }
 ```
-
-## Extractors:
-
-Object extracted | Extractor name | Library
------------------|----------------|--------
-Emails | email_extractor_regex | regex
-URLs | url_extractor_ioc-finder | ioc-finder
-URLs | url_extractor_regex | regex
-Phone numbers | phone_extractor_ioc_finder | ioc-finder
-City, state, country | geo_extractor_geograpy3 | geograpy3
-Job title | title_extractor |
-Quantities | qty_extractor_quantulum3 | quantulum3
 
 
 
